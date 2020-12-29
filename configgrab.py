@@ -38,5 +38,5 @@ for device in all_devices:
     for name in hostname:
         print("==== Interface Status of " + name + " ===== ")
         print(output)
-        print("======================= CONFIG END =======================")
+        print("=============== CONFIG END ===============")
         
