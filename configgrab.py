@@ -28,15 +28,14 @@ nx2 = {
     'password': 'cisco', 
 }
 
-hostname = ['dist-rtr01', 'dist-rtr02', 'dist-sw01', 'dist-sw02']
 all_devices = [rtr1, rtr2, nx1, nx2]
 
 for device in all_devices:
     net_connect = ConnectHandler(**device)
+    name = net_connect.send_command('show run | sec hostname')
     output = net_connect.send_command('terminal length 0')
     output = net_connect.send_command('show ip int brief')
-    for name in hostname:
-        print("==== Interface Status of " + name + " ===== ")
-        print(output)
-        print("=============== CONFIG END ===============")
+    print("==== Interface Status of " + name.strip('hostname ') + " ===== ")
+    print(output)
+    print("=============== CONFIG END ===============")
         
