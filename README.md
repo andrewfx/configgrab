@@ -1,3 +1,3 @@
 # Grab Running Config!
 
-Test script to use on Cisco DevNet sandbox - pull all current running configs of defined devices.
+Test script to use on Cisco DevNet sandbox - pull the specified lines of config from each defined device.
